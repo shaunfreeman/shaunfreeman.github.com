@@ -11,17 +11,17 @@ body {
 h1{
 	font-size: 3em;
 }
-a {
+a img {
 	text-decoration: none;
 }
 img { border:0px; }
-dt a{
+dt a {
 	color: #fff;
 	background-color: transparent;
-	border-bottom: 2px solid #fafafa;
 }
 dt a:hover{
 	border-color: #fff;
+	text-decoration: none;
 }
 dt{
 	font-size: 1.62em;
@@ -29,7 +29,7 @@ dt{
 	white-space: nowrap;
 }
 dd{
-	color: #ccc;
+	color: #606060;
 	background-color: transparent;
 }
 dt, dd{
@@ -38,7 +38,7 @@ dt, dd{
 	margin: 1em;
 	padding: 0;
 }
-#repos-list{
+#repos-list-tag {
 	text-align: center;
 	margin: 2em 0;
 }
