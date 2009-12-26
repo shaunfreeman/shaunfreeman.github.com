@@ -3,9 +3,8 @@ if (!window.console){
 	window.console.log = function(){};
 }
 
-function TagCloud(d) {
+function TagCloud(repos) {
 	var reposListTag = $('repos-list-tag');
-	var repos = d.user.repositories;
 	var html = '<dl>';
 	repos.each(function(repo){
 		if (repo.private || repo.fork) return;
@@ -28,11 +27,39 @@ function TagCloud(d) {
 	});
 }
 
+function repoSwitch(repos) {
+	var imgPath = '/raw/master/screenshot.png';
+	var el = $('swap');
+	var imgs = [];
+	var html = '';
+	repos.each(function(repo){
+		imgs.include(repo.url+imgPath);
+	});
+	imgs = new Asset.images(imgs);
+	imgs.each(function(img) {
+		if (img.width > 0 && img.height > 0) {
+			img.inject(el, 'before').addClass('swap');
+		}
+	});
+	var elSwap = new Fx.ElementSwap('img.swap', {
+		TransitionFx: {
+			duration: 3000,
+			transition: 'bounce:in:out'
+		},
+		elementSwapDelay: 5,
+		showFx: 'slide:left',
+		hideFx: 'slide:left',
+		autoPlay: true,
+		wait: false
+	});
+}
+
 window.addEvent('domready', function(){
 	
 	var mh = new MooHub();
 	mh.grabUserInfo('vincentbluff', function(d){
 		console.log(d);
-		TagCloud(d);
+		TagCloud(d.user.repositories);
+		repoSwitch(d.user.repositories);
 	});
 });

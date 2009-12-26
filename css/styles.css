@@ -42,3 +42,24 @@ dt, dd{
 	text-align: center;
 	margin: 2em 0;
 }
+
+.swap {
+	position:absolute;
+	top:0px;
+	width:185px;
+	height:78px;
+	z-index:0;
+	display:block;
+	/*display:none;*/
+}
+
+.active { display:block; z-index:1 }
+
+.elementSwap {
+	position:relative;
+	width:185px;
+	height:78px;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:hidden;
+}
