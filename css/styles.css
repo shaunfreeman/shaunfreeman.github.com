@@ -1,0 +1,44 @@
+body {
+	color: #fff;
+	background-color: #000;
+	font-family: helvetica, arial, sans-serif;
+	font-size: 80%;
+	text-align: center;
+}
+#container{
+	margin: 0 auto;
+}
+h1{
+	font-size: 3em;
+}
+a {
+	text-decoration: none;
+}
+img { border:0px; }
+dt a{
+	color: #fff;
+	background-color: transparent;
+	border-bottom: 2px solid #fafafa;
+}
+dt a:hover{
+	border-color: #fff;
+}
+dt{
+	font-size: 1.62em;
+	font-weight: bold;
+	white-space: nowrap;
+}
+dd{
+	color: #ccc;
+	background-color: transparent;
+}
+dt, dd{
+	display: inline;
+	line-height: 1.5em;
+	margin: 1em;
+	padding: 0;
+}
+#repos-list{
+	text-align: center;
+	margin: 2em 0;
+}
