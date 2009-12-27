@@ -1,43 +1,66 @@
 body {
+	margin-top: 1.0em;
 	color: #fff;
 	background-color: #000;
-	font-family: helvetica, arial, sans-serif;
+	font-family: "helvetica, arial, sans-serif";
 	font-size: 80%;
 	text-align: center;
 }
-#container{
-	margin: 0 auto;
-}
-h1{
-	font-size: 3em;
-}
-a img {
-	text-decoration: none;
-}
+
+#container{ margin: 0 auto; }
+
+h1 { font-size: 3.8em; color: #fff; margin-bottom: 3px; }
+h1 .small { font-size: 0.4em; }
+h1 a { text-decoration: none }
+h2 { font-size: 1.5em; color: #fff; }
+h3 { text-align: center; color: #fff; }
+
+a { color: #fff; }
+
+.description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+
+.download { float: right; }
+
+pre { background: #000; color: #fff; padding: 15px;}
+
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+.footer { text-align:center; padding-top:30px; font-style: italic; }
+
+h1{ font-size: 3em; }
+
+a img { text-decoration: none; }
+
 img { border:0px; }
+
 dt a {
 	color: #fff;
 	background-color: transparent;
 }
+
 dt a:hover{
 	border-color: #fff;
 	text-decoration: none;
 }
+
 dt{
 	font-size: 1.62em;
 	font-weight: bold;
 	white-space: nowrap;
 }
+
 dd{
 	color: #606060;
 	background-color: transparent;
 }
+
 dt, dd{
 	display: inline;
 	line-height: 1.5em;
 	margin: 1em;
 	padding: 0;
 }
+
 #repos-list-tag {
 	text-align: center;
 	margin: 2em 0;
