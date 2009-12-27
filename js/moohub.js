@@ -31,7 +31,10 @@ var MooHub = new Class({
 
 	request: function(data, fn){
 		var url = 'http://github.com/api/' + this.options.version + '/json/' + data;
-		new JsonP(url, { onComplete: fn }).request();
+		new Request.JSONP({
+			url: url,
+			onComplete: fn
+		}).send();
 	}
 
 });

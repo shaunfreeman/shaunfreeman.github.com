@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	 <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+	<script src="http://github.com/vincentbluff/ElementSwap/raw/master/Source/ElementSwap.js"></script>
+	<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+	<link href="../css/subfolder.css" rel="stylesheet" type="text/css" />
+
+	<title>vincentbluff/ElementSwap @ GitHub</title>
+	
+	<script>
+		window.addEvent('domready', function() {
+			var elSwap = new ElementSwap('.div_swap',{
+				activateOnLoad: 'el3',
+				autoPlay: true
+			});
+		});
+	</script>
+	
+	<style type="text/css">
+	
+	#el1 {background-color:#f00;}
+	#el2 {background-color:#0f0;}
+	#el3 {background-color:#00f;}
+	
+	.div_swap {
+		position:absolute;
+		top:0px;
+		width:300px;
+		height:300px;
+		display:none;
+	}
+	
+	.active { display:block; }
+	
+	.elementSwap {
+		position:relative;
+		width:300px;
+		height:300px;
+		margin-left:auto;
+		margin-right:auto;
+		overflow:hidden;
+	}
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/vincentbluff/ElementSwap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/vincentbluff/ElementSwap/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/vincentbluff/ElementSwap/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+      
+    <h1><a href="http://github.com/vincentbluff/ElementSwap">ElementSwap</a> 
+      <span class="small">by <a href="http://github.com/vincentbluff">vincentbluff</a></span></h1>
+
+    <div class="description">
+      A MooTools class for a simple slide show using any dom element.
+    </div>
+    
+    <h2>Demo</h2>
+	<div id="el1" class="div_swap"><p>DIV 1</p></div>
+	<div id="el2" class="div_swap"><p>DIV 2</p></div>
+	<div id="el3" class="div_swap"><p>DIV 3</p></div>
+
+    <h2>Authors</h2>
+<p>vincentbluff (shaun@shaunfreeman.co.uk)
+<br/>
+<br/>      </p>
+<h2>Contact</h2>
+<p>Shaun Freeman (shaun@shaunfreeman.co.uk)
+<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/vincentbluff/ElementSwap/zipball/master">zip</a> or
+      <a href="http://github.com/vincentbluff/ElementSwap/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/vincentbluff/ElementSwap</pre>
+    </p>
+      
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/vincentbluff/ElementSwap">vincentbluff/ElementSwap</a>
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>

@@ -2,7 +2,7 @@ body {
 	margin-top: 1.0em;
 	color: #fff;
 	background-color: #000;
-	font-family: "helvetica, arial, sans-serif";
+	font-family: "Segoe Script", helvetica, arial, sans-serif;
 	font-size: 80%;
 	text-align: center;
 }
@@ -75,6 +75,8 @@ dt, dd{
 	display:block;
 	/*display:none;*/
 }
+
+.swap:hover { cursor:pointer; }
 
 .active { display:block; z-index:1 }
 
