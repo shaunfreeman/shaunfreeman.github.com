@@ -36,10 +36,10 @@ function repoSwitch(repos) {
 		imgs.include(repo.url+imgPath);
 	});
 	imgs = new Asset.images(imgs);
-	imgs.each(function(img) {
+	imgs.each(function(img, index) {
 		if (img.width > 0 && img.height > 0) {
 			var a = new Element('a', {
-				href: 'vincentbluff.github.com/'+repo.name,
+				href: 'vincentbluff.github.com/'+repos[index].name,
 				class: 'swap'
 			})
 			img.inject(a).inject(el, 'before');
