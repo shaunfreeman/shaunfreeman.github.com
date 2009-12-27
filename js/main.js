@@ -31,18 +31,14 @@ function repoSwitch(repos) {
 	var imgPath = '/raw/master/screenshot.png';
 	var el = $('swap');
 	var imgs = [];
-	var html = '';
+	
 	repos.each(function(repo){
 		imgs.include(repo.url+imgPath);
 	});
 	imgs = new Asset.images(imgs);
-	imgs.each(function(img, index) {
+	imgs.each(function(img) {
 		if (img.width > 0 && img.height > 0) {
-			var a = new Element('a', {
-				href: 'vincentbluff.github.com/'+repos[index].name,
-				class: 'swap'
-			})
-			img.inject(a).inject(el, 'before');
+			img.inject(el, 'before').addClass('swap');
 		}
 	});
 	var elSwap = new Fx.ElementSwap('img.swap', {
