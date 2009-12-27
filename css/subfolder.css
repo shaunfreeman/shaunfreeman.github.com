@@ -5,8 +5,7 @@ body {
 	color: #fff;
 }
 #container {
-	margin: 0 auto;
-	width: 700px;
+	margin: 0 100 0 0;
 	border:1px solid #fff;
 }
 h1 { font-size: 3.8em; color: #fff; margin-bottom: 3px; }
