@@ -1,3 +1,13 @@
+var menuData = {
+	"menu": [
+		{ "url": "index.html", "text": "Home" },
+		{ "url": "Fx.MorphElement/index.html", "text": "Fx.MorphElement" },
+		{ "url": "ElementSwap/index.html", "text": "ElementSwap" },
+		{ "url": "Fx.ElementSwap/index.html", "text": "Fx.ElementSwap" },
+		{ "url": "Tabs/index.html", "text": "Tabs" },
+		{ "url": "Fx.Tabs/index.html", "text": "Fx.Tabs" }
+	]
+}
 var VincentBluff = new Class({
 	
 	Extends: Request.HTML,
@@ -29,20 +39,14 @@ var VincentBluff = new Class({
 		);
 		this.callChain();
 		
-		new Request.JSON({
-			method: 'get',
-			url: 'js/menu.json',
-			onSuccess: function(responseJSON) {
-				this.menu(responseJSON);
-			}.bind(this)
-		}).send();
+		this.menu()
 	},
 	
-	menu: function(jsonData) {
+	menu: function() {
 		
 		var ul = new Element('ul', { id: 'navibar' });
 		
-		jsonData.menu.each(function(item){
+		menuData.menu.each(function(item){
 			
 			var li = new Element('li');
 			
@@ -65,7 +69,7 @@ var VincentBluff = new Class({
 						el.tween('color', '#fff');
 					},
 					'click': function(e){
-						if (a.get('text') == 'Home') return;
+						if (a.getPrevious().get('text') == 'Home') return;
 						e.stop();
 						this.options.url = a.get('href');
 						this.send();
