@@ -7,6 +7,7 @@ var VincentBluff = new Class({
 	initialize: function() {
 		
 		this.parent({
+			method: 'get',
 			useSpinner: true,
 			spinnerOptions: {},
 			spinnerTarget: $('contentWrap')
@@ -29,6 +30,7 @@ var VincentBluff = new Class({
 		this.callChain();
 		
 		new Request.JSON({
+			method: 'get',
 			url: 'js/menu.json',
 			onSuccess: function(responseJSON) {
 				this.menu(responseJSON);
