@@ -7,51 +7,26 @@
 	 <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
 	<script src="http://github.com/vincentbluff/ElementSwap/raw/master/Source/ElementSwap.js"></script>
 	<link href="../css/styles.css" rel="stylesheet" type="text/css" />
-	<link href="../css/subfolder.css" rel="stylesheet" type="text/css" />
 
 	<title>vincentbluff/ElementSwap @ GitHub</title>
 	
 	<script>
 		window.addEvent('domready', function() {
-			var elSwap = new ElementSwap('.div_swap',{
+			var demo = new ElementSwap('.div_swap',{
 				activateOnLoad: 'el3',
-				autoPlay: true
+				autoPlay: true,
+				panelWrap: 'elementSwapWrapDemo',
+				panelWrapClass: 'elementSwapDemo'
 			});
 		});
 	</script>
 	
-	<style type="text/css">
-	
-	#el1 {background-color:#f00;}
-	#el2 {background-color:#0f0;}
-	#el3 {background-color:#00f;}
-	
-	.div_swap {
-		position:absolute;
-		top:0px;
-		width:300px;
-		height:300px;
-		display:none;
-	}
-	
-	.active { display:block; }
-	
-	.elementSwap {
-		position:relative;
-		width:300px;
-		height:300px;
-		margin-left:auto;
-		margin-right:auto;
-		overflow:hidden;
-	}
-	</style>
-	
 </head>
 
 <body>
-  <a href="http://github.com/vincentbluff/ElementSwap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-  
-  <div id="container">
+  <div class="container">
+	
+		<a href="http://github.com/vincentbluff/ElementSwap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
     <div class="download">
       <a href="http://github.com/vincentbluff/ElementSwap/zipball/master">

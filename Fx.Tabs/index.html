@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+	<script src="http://github.com/vincentbluff/Fx.MorphElement/raw/master/Source/Fx.MorphElement.js" ></script>
+	<script src="http://github.com/vincentbluff/ElementSwap/raw/master/Source/ElementSwap.js" ></script>
+	<script src="http://github.com/vincentbluff/Fx.ElementSwap/raw/master/Source/Fx.ElementSwap.js" ></script>
+	<script type="text/javascript" src="http://github.com/vincentbluff/Tabs/raw/master/Source/Tabs.js"></script>
+	<script type="text/javascript" src="http://github.com/vincentbluff/Fx.Tabs/raw/master/Source/Fx.Tabs.js"></script>
+	<script type="text/javascript" src="../js/selectTrans.js"></script>
+	<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+	<link href="../css/tabs.css" rel="stylesheet" type="text/css" />
+
+	<title>vincentbluff/Fx.Tabs @ GitHub</title>
+	
+	<script>
+		
+		window.addEvent('domready', function() {
+			
+			var demo = new Fx.Tabs();
+			
+			var selectTransitions = new selectTrans('tabs_transitions', demo);
+		});
+
+	</script>
+	
+</head>
+
+<body>
+	<div class="container">
+	
+		<a href="http://github.com/vincentbluff/Fx.Tabs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+    <div class="download">
+      <a href="http://github.com/vincentbluff/Fx.Tabs/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/vincentbluff/Fx.Tabs/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+      
+    <h1><a href="http://github.com/vincentbluff/Fx.Tabs">Fx.Tabs</a> 
+      <span class="small">by <a href="http://github.com/vincentbluff">vincentbluff</a></span></h1>
+
+    <div class="description">
+      MooTools Plugin to handle a Tabbed layout with some nice effects.
+    </div>
+    
+    <h2>Demo</h2>
+	<div id="demoWrap">
+		<div id="tabs_transitions">
+			<div id="changeTransition_transition" class="changeTrans"><p>Fx.Transition: </p></div>
+			<div id="changeTransition_duration" class="changeTrans"><p>Fx.Transition duration: </p></div>
+			<div id="showFx" class="changeTrans"><p>ShowFx: </p></div>
+			<div id="hideFx" class="changeTrans"><p>HideFx: </p></div>
+		</div>
+		
+		<div id="tabs">
+	
+			<!-- tab headings -->
+	
+			<ul class="tabs_title">
+				<li title="my_work">My Work</li>
+				<li title="about_me">About Me</li>
+	
+				<li title="contact">Contact</li>
+			</ul>
+	
+				
+			<!-- Tab1 content -->
+	
+			<div id="my_work" class="tabs_panel">
+				<h1>Tab 1</h1>
+				
+				<p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p>
+			</div>
+	
+			<!-- Tab2 content -->
+	
+			<div id="about_me" class="tabs_panel">
+				<h1>Tab 2</h1>
+				<p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p>
+			</div>
+				
+			<!-- Tab3 content -->
+	
+			<div id="contact" class="tabs_panel">
+				<h1>Tab 3</h1>
+				<p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p>
+			</div>
+		
+		</div>
+		<div class="both"></div>
+	</div>
+
+    <h2>Authors</h2>
+	<p>vincentbluff (shaun@shaunfreeman.co.uk)
+	<br/>
+	<br/>      </p>
+	<h2>Contact</h2>
+	<p>Shaun Freeman (shaun@shaunfreeman.co.uk)
+	<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/vincentbluff/Fx.Tabs/zipball/master">zip</a> or
+      <a href="http://github.com/vincentbluff/Fx.Tabs/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/vincentbluff/Fx.Tabs</pre>
+    </p>
+      
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/vincentbluff/Fx.Tabs">vincentbluff/Fx.Tabs</a>
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>

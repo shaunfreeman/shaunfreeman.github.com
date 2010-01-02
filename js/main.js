@@ -1,72 +1,185 @@
-
-function TagCloud(repos) {
-	var reposListTag = $('repos-list-tag');
-	var html = '<dl>';
+var VincentBluff = new Class({
 	
-	repos.each(function(repo){
-		if (repo.private || repo.fork || repo.name == 'vincentbluff.github.com') return;
-		html += '<dt><a href="{url}">{name}</a></dt><dd>{description} &middot; ({forks}f/{watchers}w)</dd>'.substitute(repo);
-	});
+	Extends: Request.HTML,
 	
-	html += '</dl>';
-	reposListTag.set('html', html);
+	repos: {},
 	
-	reposListTag.getElements('a').each(function(el){
-		var shuffle = new shuffleText(el);
-		var dd = el.getParent('dt').getNext('dd');
-		el.addEvents({
-			mouseenter: function(){
-				shuffle.start();
-				dd.tween('color', '#fff');
-			},
-			mouseleave: function(){
-				dd.tween('color', '#606060');
-			}
+	initialize: function() {
+		
+		this.parent({
+			useSpinner: true,
+			spinnerOptions: {},
+			spinnerTarget: $('contentWrap')
 		});
-	});
-}
+		
+		this.mh = new MooHub();
+		
+		this.chain(
+			function(){
+				this.mh.grabUserInfo('vincentbluff', function(d){
+					this.repos = d.user.repositories;
+					this.callChain();
+				}.bind(this));
+			}.bind(this),
+			function(){
+				this.TagCloud();
+				this.repoSwitch();
+			}
+		);
+		this.callChain();
+		
+		new Request.JSON({
+			url: 'js/menu.json',
+			onSuccess: function(responseJSON) {
+				this.menu(responseJSON);
+			}.bind(this)
+		}).send();
+	},
+	
+	menu: function(jsonData) {
+		
+		var ul = new Element('ul', { id: 'navibar' });
+		
+		jsonData.menu.each(function(item){
+			
+			var li = new Element('li');
+			
+			var p = new Element('p', {
+				class: 'buttonLeave',
+				text: item.text
+			});
+			
+			var a = new Element('a', {
+				href: item.url,
+				events: {
+					'mouseenter': function(e){
+						var el = this.getPrevious();
+						el.addClass('buttonEnter');
+						el.tween('color', '#daa520');
+					},
+					'mouseleave': function(e){
+						var el = this.getPrevious();
+						el.removeClass('buttonEnter');
+						el.tween('color', '#fff');
+					},
+					'click': function(e){
+						if (a.get('text') == 'Home') return;
+						e.stop();
+						this.options.url = a.get('href');
+						this.send();
+					}.bind(this)
+				}
+			});
+			
+			p.inject(li);
+			a.inject(li);
+			li.inject(ul);
+			
+		}.bind(this));
+		
+		ul.inject('sidebar');
+	},
+	
+	TagCloud: function (repos) {
+		var reposListTag = $('repos-list-tag');
+		var html = '<dl>';
+		
+		this.repos.each(function(repo){
+			if (repo.private || repo.fork || repo.name == 'vincentbluff.github.com') return;
+			html += '<dt><a href="{url}">{name}</a></dt><dd>{description} &middot; ({forks}f/{watchers}w)</dd>'.substitute(repo);
+		});
+		
+		html += '</dl>';
+		reposListTag.set('html', html);
+		
+		reposListTag.getElements('a').each(function(el){
+			var shuffle = new shuffleText(el);
+			var dd = el.getParent('dt').getNext('dd');
+			el.addEvents({
+				mouseenter: function(){
+					shuffle.start();
+					dd.tween('color', '#fff');
+				},
+				mouseleave: function(){
+					dd.tween('color', '#606060');
+				}
+			});
+		});
+	},
+	
+	repoSwitch: function (repos) {
+		var imgPath = '/raw/master/screenshot.png';
+		var el = $('swap');
+		var imgs = [];
+		var links = [];
+		
+		this.repos.each(function(repo){
+			imgs.include(repo.url+imgPath);
+		});
+		
+		var count = new Element('p').inject(el);
+		
+		imgs = new Asset.images(imgs, {
+			onProgress: function(counter, index) {
+				var text = counter+' of '+imgs.length;
+				count.set('text', text);
+			},
+			onComplete: function() {
+				
+				var removedElement = count.dispose();
+				
+				imgs.each(function(img, index) {
+					if (img.width > 0 && img.height > 0) {
+						var uri = this.repos[index].name + '/index.html';
+						links.include(uri);
+						img.inject(el).addClass('swap');
+					}
+				}.bind(this));
+				
+				this.elSwap = new Fx.ElementSwap('.swap', {
+					TransitionFx: {
+						duration: 3000,
+						transition: 'bounce:in:out'
+					},
+					elementSwapDelay: 5,
+					showFx: 'slide:left',
+					hideFx: 'blind:left',
+					autoPlay: true,
+					wait: false,
+					onClickView: function(index) {
+						this.options.url = links[index];
+						this.send();
+					}.bind(this)
+				});
+			}.bind(this)
+		});
+	},
+	
+	success: function(text) {
+		
+		var options = this.options, response = this.response;
+		
+		response.html = text.stripScripts(function(script){
+			response.javascript = script;
+		});
+		
+		var title = text.match(/<title>([\s\S]*?)<\/title>/i);
+		
+		document.title = title[1];
+		
+		var html = this.processHTML(response.html);
 
-function repoSwitch(repos) {
-	var imgPath = '/raw/master/screenshot.png';
-	var el = $('swap');
-	var imgs = [];
-	var links = [];
-	
-	repos.each(function(repo){
-		imgs.include(repo.url+imgPath);
-	});
-	
-	imgs = new Asset.images(imgs);
-	
-	imgs.each(function(img, index) {
-		if (img.width > 0 && img.height > 0) {
-			var uri = repos[index].name;
-			links.include(uri.toURI());
-			img.inject(el, 'before').addClass('swap');
-		}
-	});
-	
-	var elSwap = new Fx.ElementSwap('.swap', {
-		TransitionFx: {
-			duration: 3000,
-			transition: 'bounce:in:out'
-		},
-		elementSwapDelay: 5,
-		showFx: 'slide:left',
-		hideFx: 'blind:left',
-		autoPlay: true,
-		wait: false,
-		onClickView: function(index) {
-			links[index].go();
-		}
-	});
-}
+		response.tree = html.childNodes;
+		response.elements = html.getElements('div.container');
+		
+		document.id('content').empty().adopt(response.elements);
+		
+		$exec(response.javascript);
+		
+		this.onSuccess(response.tree, response.elements, response.html, response.javascript);
+	}
+});
 
 window.addEvent('domready', function(){
-	
-	var mh = new MooHub();
-	mh.grabUserInfo('vincentbluff', function(d){
-		TagCloud(d.user.repositories);
-		repoSwitch(d.user.repositories);
-	});
+	var vb = new VincentBluff();
 });

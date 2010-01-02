@@ -1,0 +1,10 @@
+{
+	"menu": [
+		{ "url": "index.html", "text": "Home" },
+		{ "url": "Fx.MorphElement/index.html", "text": "Fx.MorphElement" },
+		{ "url": "ElementSwap/index.html", "text": "ElementSwap" },
+		{ "url": "Fx.ElementSwap/index.html", "text": "Fx.ElementSwap" },
+		{ "url": "Tabs/index.html", "text": "Tabs" },
+		{ "url": "Fx.Tabs/index.html", "text": "Fx.Tabs" }
+	]
+}

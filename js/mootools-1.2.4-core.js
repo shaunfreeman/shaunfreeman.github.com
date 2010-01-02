@@ -4221,7 +4221,6 @@ Request.HTML = new Class({
 		text = (match) ? match[1] : text;
 
 		var container = new Element('div');
-
 		return $try(function(){
 			var root = '<root>' + text + '</root>', doc;
 			if (Browser.Engine.trident){
