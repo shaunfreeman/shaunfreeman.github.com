@@ -8,6 +8,9 @@ var menuData = {
 		{ "url": "Fx.Tabs/index.html", "text": "Fx.Tabs" }
 	]
 }
+
+var demo = {};
+
 var VincentBluff = new Class({
 	
 	Extends: Request.HTML,
@@ -18,6 +21,7 @@ var VincentBluff = new Class({
 		
 		this.parent({
 			method: 'get',
+			noCache: true,
 			useSpinner: true,
 			spinnerOptions: {},
 			spinnerTarget: $('contentWrap')
@@ -142,7 +146,7 @@ var VincentBluff = new Class({
 					}
 				}.bind(this));
 				
-				this.elSwap = new Fx.ElementSwap('.swap', {
+				this.Swap = new Fx.ElementSwap('.swap', {
 					TransitionFx: {
 						duration: 3000,
 						transition: 'bounce:in:out'
@@ -179,6 +183,8 @@ var VincentBluff = new Class({
 		response.elements = html.getElements('div.container');
 		
 		document.id('content').empty().adopt(response.elements);
+		
+		$clear(demo.slideShow);
 		
 		$exec(response.javascript);
 		
