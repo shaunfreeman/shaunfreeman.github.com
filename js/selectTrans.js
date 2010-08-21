@@ -24,10 +24,9 @@ var selectTrans = new Class({
 		commonFx: [
 			'select',
 			'blind:up', 'blind:down', 'blind:left', 'blind:right',
-			'slide:up', 'slide:down', 'slide:left', 'slide:right'
-		],
-		panelStartFx: ['fade'],
-		panelEndFx: ['appear']
+			'slide:up', 'slide:down', 'slide:left', 'slide:right',
+			'fade'
+		]
 	},
  
 	initialize: function(element,fx) {
@@ -42,18 +41,7 @@ var selectTrans = new Class({
 			
 			var opt = element.id.split("_");
 			
-			if (opt[0].contains('Fx')) {
-				this.fx = [];
-				
-				this.fx = this.options.commonFx;
-				if (opt[0].contains('Start')) {
-					selectOptions = this.fx.include(this.options.startFx);
-				} else {
-					selectOptions = this.fx.include(this.options.endFx).erase(this.options.startFx);
-				}
-			} else {
-				selectOptions = this.options[opt[opt.length - 1]];
-			}
+			selectOptions = (opt[0].contains('Fx')) ? this.options.commonFx : this.options[opt[opt.length - 1]];
 			
 			selectOptions.each(function(selectValue) {
 				new Element('option', {

@@ -49,12 +49,12 @@ body {
 
 .buttonLeave {
 	color: #fff;
-	background: url("../images/button.png") no-repeat 0px -48px;
+	background: url("/images/images/button.png") no-repeat 0px -48px;
 }
 
 .buttonEnter {
 	color: #dda520;
-	background: url("../images/button.png") no-repeat 0px -24px;
+	background: url("/images/images/button.png") no-repeat 0px -24px;
 }
 
 #sidebar li a {
@@ -64,7 +64,7 @@ body {
 	display:block;
 	width:150px;
 	height:24px;
-	background: url("../images/button.png") no-repeat 0px 0px;
+	background: url("/images/button.png") no-repeat 0px 0px;
 }
 
 h1 { font-size: 3.8em; color: #fff; margin-bottom: 3px; }
