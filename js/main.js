@@ -31,7 +31,7 @@ var VincentBluff = new Class({
 		
 		this.chain(
 			function(){
-				this.mh.grabUserInfo('vincentbluff', function(d){
+				this.mh.grabUserInfo('shaunfreeman', function(d){
 					this.repos = d.user.repositories;
 					this.callChain();
 				}.bind(this));
@@ -95,7 +95,7 @@ var VincentBluff = new Class({
 		var html = '<dl>';
 		
 		this.repos.each(function(repo){
-			if (repo.private || repo.fork || repo.name == 'vincentbluff.github.com') return;
+			if (repo.private || repo.fork || repo.name == 'shaunfreeman.github.com') return;
 			html += '<dt><a href="{url}">{name}</a></dt><dd>{description} &middot; ({forks}f/{watchers}w)</dd>'.substitute(repo);
 		});
 		
