@@ -32,6 +32,7 @@ var VincentBluff = new Class({
 		this.chain(
 			function(){
 				this.mh.grabUserInfo('shaunfreeman', function(d){
+                                        console.log(d);
 					this.repos = d.user.repositories;
 					this.callChain();
 				}.bind(this));
