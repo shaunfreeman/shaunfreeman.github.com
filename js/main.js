@@ -118,7 +118,7 @@ var VincentBluff = new Class({
 	},
 	
 	repoSwitch: function (repos) {
-		var imgPath = '/raw/master/screenshot.png';
+		var imgPath = '/master/screenshot.png';
 		var el = $('swap');
 		var imgs = [];
 		var links = [];
