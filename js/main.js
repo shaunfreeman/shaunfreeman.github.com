@@ -33,7 +33,7 @@ var VincentBluff = new Class({
                                         console.log(d);
 					this.repos = d.user.repositories;
 					//this.callChain();
-				}
+				});
 
                 this.TagCloud();
 				this.repoSwitch();
