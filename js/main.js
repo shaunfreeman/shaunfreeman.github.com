@@ -27,9 +27,9 @@ var VincentBluff = new Class({
 			spinnerTarget: $('contentWrap')
 		});
 		
-		//this.mh = new MooHub();
+		this.mh = new MooHub();
 		
-		/*this.chain(
+		this.chain(
 			function(){
 				this.mh.grabUserInfo('shaunfreeman', function(d){
 					this.repos = d.user.repositories;
@@ -41,7 +41,7 @@ var VincentBluff = new Class({
 				this.repoSwitch();
 			}
 		);
-		this.callChain();*/
+		this.callChain();
 		
 		this.menu()
 	},
