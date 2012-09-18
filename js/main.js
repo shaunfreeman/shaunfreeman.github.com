@@ -95,7 +95,7 @@ var VincentBluff = new Class({
 		var html = '<dl>';
 		
 		this.repos.each(function(repo){
-			if (repo.private || repo.fork || repo.name == 'shaunfreeman.github.com') return;
+			if (repo.private || repo.name == 'shaunfreeman.github.com') return;
 			html += '<dt><a href="{html_url}">{name}</a></dt><dd>{description} &middot; ({forks}f/{watchers}w)</dd>'.substitute(repo);
 		});
 		
