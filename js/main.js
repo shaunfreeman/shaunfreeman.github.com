@@ -32,8 +32,7 @@ var VincentBluff = new Class({
 		this.chain(
 			function(){
 				this.mh.grabUserInfo('shaunfreeman', function(d){
-                                        console.log(d);
-					this.repos = d.user.repositories;
+					this.repos = d.data;
 					this.callChain();
 				}.bind(this));
 			}.bind(this),
@@ -97,7 +96,7 @@ var VincentBluff = new Class({
 		
 		this.repos.each(function(repo){
 			if (repo.private || repo.fork || repo.name == 'shaunfreeman.github.com') return;
-			html += '<dt><a href="{url}">{name}</a></dt><dd>{description} &middot; ({forks}f/{watchers}w)</dd>'.substitute(repo);
+			html += '<dt><a href="{html_url}">{name}</a></dt><dd>{description} &middot; ({forks}f/{watchers}w)</dd>'.substitute(repo);
 		});
 		
 		html += '</dl>';
@@ -119,13 +118,13 @@ var VincentBluff = new Class({
 	},
 	
 	repoSwitch: function (repos) {
-		var imgPath = '/master/screenshot.png';
+		var imgPath = '/raw/master/screenshot.png';
 		var el = $('swap');
 		var imgs = [];
 		var links = [];
 		
 		this.repos.each(function(repo){
-			imgs.include(repo.url+imgPath);
+			imgs.include(repo.html_url+imgPath);
 		});
 		
 		var count = new Element('p').inject(el);

@@ -3,7 +3,8 @@ var MooHub = new Class({
 	Implements: [Options],
 	
 	options: {
-		version: 'v1'
+		version: 'v3',
+		url: 'https://api.github.com/users/shaunfreeman/repos'
 	},
 	
 	initialize: function(options){
@@ -32,7 +33,7 @@ var MooHub = new Class({
 	request: function(data, fn){
 		var url = 'http://github.com/api/' + this.options.version + '/json/' + data;
 		new Request.JSONP({
-			url: url,
+			url: this.options.url,
 			onComplete: fn
 		}).send();
 	}

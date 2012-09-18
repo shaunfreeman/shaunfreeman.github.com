@@ -49,12 +49,12 @@ body {
 
 .buttonLeave {
 	color: #fff;
-	background: url("/images/button.png") no-repeat 0px -48px;
+	background: url("../images/button.png") no-repeat 0px -48px;
 }
 
 .buttonEnter {
 	color: #dda520;
-	background: url("/images/button.png") no-repeat 0px -24px;
+	background: url("../images/button.png") no-repeat 0px -24px;
 }
 
 #sidebar li a {
@@ -64,7 +64,7 @@ body {
 	display:block;
 	width:150px;
 	height:24px;
-	background: url("/images/button.png") no-repeat 0px 0px;
+	background: url("../images/button.png") no-repeat 0px 0px;
 }
 
 h1 { font-size: 3.8em; color: #fff; margin-bottom: 3px; }
@@ -125,7 +125,7 @@ dt, dd{
 #swap {
 	width:185px;
 	height:78px;
-	background: url(/images/1_loading.gif) no-repeat center 5px;
+	background: url(../images/1_loading.gif) no-repeat center 5px;
 	margin: 0 auto;
 }
 
@@ -229,7 +229,7 @@ dt, dd{
 }
 
 .spinner-img {
-	background: url(/images/1_loading.gif) no-repeat;
+	background: url(../images/1_loading.gif) no-repeat;
 	width: 30px;
 	height: 30px;
 	margin: 0 auto;
